@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="member" class="com.ohgiraffers.common.MemberDTO">
+        <property name="seq" value="1"/>
+        <property name="name" value="홍길동"/>
+        <property name="phone" value="010-2222-3333"/>
+        <property name="email" value="hong@gmail.com"/>
+        <property name="personalAccount" ref="account"/>
+        <!-- 프로퍼티 세터 이용하는것 컨스트럭터 arg생성자이용하는것-->
+    </bean>
+    <bean id="account" class="com.ohgiraffers.common.PersonalAccount">
+        <constructor-arg index="0" value="20"/>
+        <constructor-arg index="1" value="110-223-423321"/>
+        <!--객체안만드는ㅇㄱ더 의존성 직접만든다음에 설정을해주면 객채가 생성되서위에 들어가는?주입이라는걸 해본다
+        특정빈을 특정빈에 넣어줄수있다 DI 잘사용하지않은방식인데 이해도안됨-->
+    </bean>
+</beans>

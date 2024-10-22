@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="member" class="com.ohgiraffers.common.MemberDTO">
+        <constructor-arg index="0" value="1"/>
+        <constructor-arg index="1" value="user01"/>
+        <constructor-arg index="2" value="pass01"/>
+        <constructor-arg index="3" value="홍길동"/>
+    </bean>
+
+</beans>
+<!--이게 객체다 언제 사라지고없어질건지 우린 모른다 이방식이 제일 안쓰인다
+입력받은값을 바로 xml넣어주는경우가 없어서 근데 이런식으로 생성자 기반으로 멤버라는 객체를 만들어준다-->

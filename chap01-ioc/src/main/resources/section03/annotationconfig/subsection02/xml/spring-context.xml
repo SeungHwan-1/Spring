@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+        <context:component-scan base-package="com.ohgiraffers">
+            <context:exclude-filter type="assignable"
+                                    expression="com.ohgiraffers.section02.javaconfig.ContextConfiguration"/>
+            <!--그중에 이건 빼는 expression-->
+        </context:component-scan>
+
+    </beans>
+<!--이게 객체다 언제 사라지고없어질건지 우린 모른다 이방식이 제일 안쓰인다
+입력받은값을 바로 xml넣어주는경우가 없어서 근데 이런식으로 생성자 기반으로 멤버라는 객체를 만들어준다-->
