@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <bean id="shop" class="com.ohgiraffers.section03.subsection01.java.Owner"
+          init-method="openShop"
+          destroy-method="closeShop">
+    </bean>
+    <bean id="today" class ="java.util.Date" scope="prototype"/>
+    <bean id="carpBread" class="com.ohgiraffers.common.Bread">
+
+        <property name="name" value="붕어빵"/>
+        <property name="price" value="1000"/>
+        <property name="bakedDate" ref="today"/>
+        <!-- 프로퍼티 세터 이용하는것 컨스트럭터 arg생성자이용하는것-->
+    </bean>
+
+    <bean id="milk" class="com.ohgiraffers.common.Beverage">
+
+        <property name="name" value="우유"/>
+        <property name="price" value="1000"/>
+        <property name="capacity" value="500"/>
+        <!-- 프로퍼티 세터 이용하는것 컨스트럭터 arg생성자이용하는것-->
+    </bean>
+
+    <bean id="cart" class="com.ohgiraffers.common.ShoppingCart"/>
+
+
+    <bean id="water" class="com.ohgiraffers.common.Beverage">
+
+        <property name="name" value="물"/>
+        <property name="price" value="1000"/>
+        <property name="capacity" value="500"/>
+        <!-- 프로퍼티 세터 이용하는것 컨스트럭터 arg생성자이용하는것-->
+    </bean>
+
+
+        <!--객체안만드는ㅇㄱ더 의존성 직접만든다음에 설정을해주면 객채가 생성되서위에 들어가는?주입이라는걸 해본다
+        특정빈을 특정빈에 넣어줄수있다 DI 잘사용하지않은방식인데 이해도안됨-->
+
+</beans>
